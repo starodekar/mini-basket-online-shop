@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
 
+## Configuration
+
+This project uses firebase as backend. Create a bew project in firebase and provide the firebase configurations in src/environments/environment.ts and src/environments/environment.prod.ts files.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

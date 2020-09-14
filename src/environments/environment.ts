@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  // add firebase configuration
+  firebase: {
+    // add firebase configuration
+  }
 };
 
 /*

@@ -1,0 +1,43 @@
+<p>
+    <a class="btn btn-primary" routerLink="/admin/products/new">New Product</a>
+<p>
+<p>
+    <input #query (keyup)="search(query.value)" type="text" class="form-control" placeholder="search...">
+</p>
+
+<!-- <table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let p of filteredList">
+        <td>{{p.title}}</td>
+        <td>{{p.price}}</td>
+        <td><a [routerLink]="['/admin/products/',p.key]">Edit</a></td>
+    </tr>
+</table> -->
+
+
+
+
+
+
+<data-table [items]="tableItems" [itemCount]="totalProductsCount" (reload)="refreshItems($event)">
+
+    <data-table-column [property]="'title'" [header]="'Title'" [sortable]="true" [resizable]="true">
+    </data-table-column>
+
+    <data-table-column [property]="'price'" [header]="'Price'" [sortable]="true" [resizable]="true">
+        <ng-template #dataTableCell let-item="item">
+            {{ item.price | currency:'USD' }}
+        </ng-template>
+    </data-table-column>
+
+    <data-table-column [property]="'key'">
+        <ng-template #dataTableCell let-item="item">
+            <a [routerLink]="['/admin/products/', item.key]">Edit</a>
+        </ng-template>
+    </data-table-column>
+
+</data-table>

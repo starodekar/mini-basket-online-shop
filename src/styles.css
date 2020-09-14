@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@fortawesome\fontawesome-free\css\all.css";
+
+/* $primary-color: #a9c205;
+$primary-color-hover: #535f02; */
+
+body {
+    padding-top: 80px;
+}
+
+.navbar { 
+border-bottom: 3px solid #dddcdc;
+}
+
+.navbar-light .navbar-brand {
+    color: #a9c205; 
+}
+
+.list-group-item.active {
+    background-color: #a9c205;
+    border-color: #535f02;
+}
+
+.btn-primary {
+    background-color: #a9c205;
+    border-color: #535f02;
+}
+
+.btn-primary:hover {
+    background-color: #535f02;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #a9c205;
+    border-color: #a9c205;
+}
+
+.form-control:focus {
+    border-color: #a9c205;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

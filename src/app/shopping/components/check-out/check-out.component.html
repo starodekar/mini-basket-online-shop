@@ -1,0 +1,65 @@
+<h1>Shipping Details</h1>
+<div class="row" *ngIf="cart$ | async as cart">
+    <div class="col-6">
+        <form #f="ngForm" (ngSubmit)="submit(f.value, cart)">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input ngModel #name="ngModel" name="name" id="name" type="text" class="form-control" required>
+                <div *ngIf="name.touched && !name.valid" class="alert alert-danger">
+                    <div>Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address1">Address</label>
+                <input ngModel #address1="ngModel" name="address1" id="address1" type="text" class="form-control"
+                    placeholder="Line 1" required>
+                <div *ngIf="address1.touched && !address1.valid" class="alert alert-danger">
+                    <div *ngIf="address1.errors.required">Address line 1 is required</div>
+                </div>
+
+                <div class="form-group">
+                    <label for=""></label>
+                    <input ngModel #address2="ngModel" name="address2" id="address2" type="text" placeholder="Line 2"
+                        class="form-control" required>
+                    <div *ngIf="address2.touched && !address2.valid" class="alert alert-danger">
+                        <div *ngIf="address2.errors.required">Address line 1 is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input ngModel #city="ngModel" name="city" id="city" type="text" class="form-control" required>
+                <div *ngIf="city.touched && !city.valid" class="alert alert-danger">
+                    <div>City is required</div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Place Order</button>
+        </form>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Oreder summary</h5>
+                <p class="card-text">You have {{cart.totalItemsCount}} items in your shopping cart
+                </p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let i of cart.items">
+                        {{i.quantity}} x {{i.title}}
+                        <div class="float-right">
+                            {{i.totalPrice | currency:'USD'}}
+                        </div>
+                    </li>
+                    <li class="list-group-item font-weight-bold">
+                        Total
+                        <div class="float-right">
+                            {{cart.totalPrice | currency:'USD'}}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

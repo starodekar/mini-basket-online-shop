@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Configuration
 
-This project uses firebase as backend. Create a bew project in firebase and provide the firebase configurations in src/environments/environment.ts and src/environments/environment.prod.ts files.
+This project uses firebase as backend. Create a bew project in firebase and provide the firebase configurations in `src/environments/environment.ts` and `src/environments/environment.prod.ts` files.
 
 ## Development server
 
